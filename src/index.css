@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  background-color: #1a1a1d;
+}
+
+.my-card img {
+  width: 300px;
+  border-radius: 10px;;
+}
+
+.follower-card {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.follower-card img {
+  width: 20%;
+  margin: 10px;
+  border-radius: 10px;;
+}
+
+h1 {
+  color: #950740
+}
+
+h2 {
+  color: #4e4e50
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
+
+form {
+  margin-top: 25px;
+}
+
+form button {
+  font-size: 1rem;
+  border: 0;
+  background-color: #950740;
+  margin-left: 10px;
+}
