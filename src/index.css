@@ -23,14 +23,15 @@ code {
 
 .follower-card {
   display: flex;
+  flex-direction: column;
   flex-flow: wrap;
   justify-content: center;
 }
 
 .follower-card img {
-  width: 20%;
-  margin: 10px;
-  border-radius: 10px;;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 h1 {
@@ -55,4 +56,10 @@ form button {
   border: 0;
   background-color: #950740;
   margin-left: 10px;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+
 }

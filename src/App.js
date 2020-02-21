@@ -59,15 +59,20 @@ class App extends React.Component {
           </form>
         </div>
 
-        <div className='my-card'>
-          <h2>{this.state.name}</h2>
-          <img src={this.state.mygit} />
-        </div>
+      <div className='my-card'>
+        <h2>{this.state.name}</h2>
+        <img src={this.state.mygit} />
+      </div>
 
-        <h2>My followers</h2>
-            <div className='follower-card'>
-              {this.state.followers.map(follower => (
-              <img src={follower.avatar_url} />
+      <h2>My followers</h2>
+          <div className='follower-card'>
+            {this.state.followers.map(follower => (
+              <>
+              <div className='test'>
+                <img src={follower.avatar_url} />
+                <h2 class='login'>{follower.login}</h2>
+              </div>
+              </>
             ))}
           </div>
       </div>  
