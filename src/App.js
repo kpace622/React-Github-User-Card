@@ -7,7 +7,6 @@ class App extends React.Component {
     mygit: [],
     name: [],
     followers: [],
-    search: ''
   }
 
   componentDidMount() {
@@ -28,49 +27,25 @@ class App extends React.Component {
       .catch(err => console.log(err))
     }
 
-    handleSearch = e => {
-      e.preventDefault()
-      fetch(`https://api.github.com/users/kpace622/${this.state.search}`)
-      .then(res => res.json())
-      .then(search => {
-        if (search.status !== 'error') {
-          this.setState({ ...this.state, search: search})
-        }
-      })
-    };
-
-    handleSearchText = e => {
-      this.setState({ ...this.state, search: e.target.value });
-    }
-
   render () {
     return (
       <div className="App">
         <div className='header'>
           <h1>Github followers</h1>
-          <form>
-            <input
-            type='text'
-            value={this.state.search}
-            placeholder=''
-            onChange={this.handleSearch}
-            />
-            <button onClick={this.handleSearchText}>Search followers</button>
-          </form>
         </div>
 
       <div className='my-card'>
         <h2>{this.state.name}</h2>
-        <img src={this.state.mygit} />
+        <a href='https://github.com/kpace622' target='blank'><img src={this.state.mygit} alt='My github profile'/></a>
       </div>
 
       <h2>My followers</h2>
           <div className='follower-card'>
             {this.state.followers.map(follower => (
               <>
-              <div className='test'>
-                <img src={follower.avatar_url} />
-                <h2 class='login'>{follower.login}</h2>
+              <div className='test' key={follower.id}> 
+                <a href={follower.html_url} target='blank'><img src={follower.avatar_url} alt='My followers github profiles'/></a>
+                <h2 className='login'>{follower.login}</h2>
               </div>
               </>
             ))}
